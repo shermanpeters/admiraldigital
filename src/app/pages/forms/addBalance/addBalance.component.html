@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card>
+            <nb-card-header>Deposit money</nb-card-header>
+            <nb-card-body>
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="dflightnumber" class="label">Total amount <span
+                                    style="color: red;">*</span></label>
+                            <input type="number" class="form-control" id="dflightnumber" [(ngModel)]="userData.totalAmount">
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="testresult" class="label">Deposit from? <span
+                                    style="color: red;">*</span></label>
+                            <nb-select selected="1" fullWidth [(ngModel)]="userData.depositfrom">
+                                <nb-option value="CIMB Bank">CIMB Bank</nb-option>
+                                <nb-option value="May Bank">May Bank</nb-option>
+                                <nb-option value="Hong Leong Bank">Hong Leong Bank</nb-option>
+                            </nb-select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="testresult" class="label">Select account <span
+                                    style="color: red;">*</span></label>
+                            <nb-select selected="1" fullWidth [(ngModel)]="userData.depositaccount">
+                                <nb-option value="Saving Account">Saving Account</nb-option>
+                                <nb-option value="Current Account">Current Account</nb-option>
+                                <nb-option value="Fixed Deposit">Fixed Deposit</nb-option>
+                            </nb-select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button [class.spinner]="loading" [disabled]="loading" style="float: right;" type="submit" nbButton size="large" (click)="deposit()">Submit</button>
+
+
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<nb-card>
+    <nb-card-header>
+        Umrah packages
+        <button class="buttonExport" nbButton style="float: right;" outline status="info" (click)="downloadCSV()">EXPORT</button>
+    </nb-card-header>
+
+    <div class="col-md-12" style="overflow-x: scroll;">
+        <div class="smart-table-container" style="width: 2000px;">
+            <nb-card-body>
+                <ng2-smart-table [settings]="settings" [source]="source" (editConfirm)="onEditConfirm($event)">
+                </ng2-smart-table>
+            </nb-card-body>
+        </div>
+    </div>
+</nb-card>

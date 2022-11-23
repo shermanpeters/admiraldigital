@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row my-3">
+
+        <div class="col-md-4">
+            <div class="card text-center h-80">
+                <div class="card-block">
+                    <h6 class="card-title">Total balance</h6>
+                    <!-- <h4><i class="fa fa-users fa-1x"></i></h4> -->
+                    <img class="dashboard-icon" src="../../../assets/images/dollar-currency-symbol.png">
+                </div>
+                <div class="row px-2 no-gutters">
+                    <div class="col-12">
+                        <h5>{{totalBankBalance | currency:'MYR '}}
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center h-80">
+                <div class="card-block">
+                    <h6 class="card-title">Recent transfer</h6>
+                    <!-- <h4><i class="fa fa-users fa-1x"></i></h4> -->
+                    <img class="dashboard-icon" src="../../../assets/images/transfer.png">
+                </div>
+                <div class="row px-2 no-gutters">
+                    <div class="col-12">
+                        <h5>{{recentTransfer | currency:'MYR '}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center h-80">
+                <div class="card-block">
+                    <h6 class="card-title">Recent Deposit</h6>
+                    <!-- <h4><i class="fa fa-users fa-1x"></i></h4> -->
+                    <img class="dashboard-icon" src="../../../assets/images/deposit.png">
+                </div>
+                <div class="row px-2 no-gutters">
+                    <div class="col-12">
+                        <h5>{{recentDeposit | currency:'MYR '}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<br>
+<br>
+
+<h5 class="tableheader">Recent transaction - {{todayDate}}</h5>
+<br>
+
+<table class="table table-striped" id="myTable">
+    <thead>
+        <tr>
+            <th scope="col">To</th>
+            <th scope="col">Type</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Date / Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tenaga Nasional Berhad</td>
+            <td>Online transfer</td>
+            <td>MYR 165.00 <span class="badge badge-warning">Pending</span></td>
+            <td>22-11-2022 / 03:20pm</td>
+        </tr>
+        <tr>
+            <td>Digi Telecom</td>
+            <td>Online transfer</td>
+            <td>MYR 145.00 <span class="badge badge-success">Completed</span></td>
+            <td>21-11-2022 / 11:15am</td>
+        </tr>
+        <tr>
+            <td>Grab Food Delivery</td>
+            <td>Online transaction</td>
+            <td>MYR 12.00 <span class="badge badge-success">Completed</span></td>
+            <td>20-11-2022 / 01:25pm</td>
+        </tr>
+    </tbody>
+</table>

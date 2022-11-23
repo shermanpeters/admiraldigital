@@ -1,0 +1,31 @@
+<nb-card>
+    <nb-card-header>Edit company profile</nb-card-header>
+    <nb-card-body>
+
+        <div class="form-group">
+            <label for="agentname" class="label">Travel agency name *</label>
+            <input #agentname nbInput fullWidth type="text" id="agentname" value="{{ldagentname}}">
+        </div>
+
+        <div class="form-group">
+            <label for="agentemail" class="label">Email address *</label>
+            <input #agentemail nbInput fullWidth type="email" id="agentemail" value="{{ldagentemail}}">
+        </div>
+
+        <div class="form-group">
+            <label for="agentphone" class="label">Phone number *</label>
+            <input #agentphone nbInput fullWidth type="tel" id="agentphone" value="{{ldagentphone}}">
+        </div>
+
+        <div class="form-group">
+            <label for="agentaddress" class="label">Address *</label>
+            <input #agentaddress nbInput fullWidth type="text" id="agentaddress" value="{{ldagentaddress}}">
+        </div>
+
+
+    </nb-card-body>
+    <nb-card-footer>
+        <button class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
+        <button nbButton status="success" (click)="submit(agentname.value, agentemail.value, agentphone.value, agentaddress.value)">Submit</button>
+    </nb-card-footer>
+</nb-card>

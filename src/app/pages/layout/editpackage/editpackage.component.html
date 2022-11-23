@@ -1,0 +1,854 @@
+<div class="steppers-container row">
+    <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <nb-card>
+            <nb-card-body>
+
+
+                <nb-stepper #stepper>
+
+                    <!-- STEP 1 -->
+                    <nb-step class="stepperstyle" [stepControl]="firstForm" label="Airline">
+                        <form [formGroup]="firstForm" class="step-container">
+
+                            <div class="row">
+                                <!-- Departure flight -->
+                                <div class="col-md-6">
+
+                                    <nb-card>
+                                        <nb-card-header class="headerstyle"><img class="iconsheader" src="../../../../assets/images/departure.png"><b> Departure flight</b>
+                                        </nb-card-header>
+                                        <nb-card-body>
+                                            <div class="row">
+
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="dflightnumber" class="label">Flight number <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="dflightnumber" placeholder="Enter flight number" value="{{dflightnumber}}" formControlName="dflightnumber">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <!-- Date input -->
+                                                        <label for="dflightdate" class="label">Flight date <span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="dflightdate" name="dflightdate" placeholder="MM/DD/YYY" type="datetime-local" formControlName="dflightdate" value="{{dflightdate}}" />
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="ddepartureairport" class="label">Departure airport
+                                                            <span style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="ddepartureairport" placeholder="Enter a departure airport" formControlName="ddepartureairport" value="{{ddepartureairport}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <!-- Date input -->
+                                                        <label for="ddeparturedate" class="label">Departure date <span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="ddeparturedate" name="ddeparturedate" placeholder="MM/DD/YYY" type="datetime-local" formControlName="ddeparturedate" value="{{ddeparturedate}}" />
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="darrivalairport" class="label">Arrival airport <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="darrivalairport" placeholder="Enter an arrival airport" formControlName="darrivalairport" value="{{darrivalairport}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="darrivaldate" class="label">Arrival date <span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="darrivaldate" name="darrivaldate" placeholder="MM/DD/YYY" type="datetime-local" formControlName="darrivaldate" value="{{darrivaldate}}" />
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="dairlineclass" class="label">Class <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{dairlineclass}} fullWidth formControlName="dairlineclass">
+                                                            <nb-option value="Economy">Economy</nb-option>
+                                                            <nb-option value="Business">Business</nb-option>
+                                                            <nb-option value="First class">First class</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="dcostperpax" class="label">Cost per pax <span
+                                                                style="color: red;">*</span></label>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">MYR</span>
+                                                            <input type="number" class="form-control" id="dcostperpax" placeholder="Enter a cost per pax" formControlName="dcostperpax" value="{{dcostperpax}}">
+                                                        </div>
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </nb-card-body>
+                                    </nb-card>
+                                </div>
+
+                                <!-- Return flight -->
+                                <div class="col-md-6">
+                                    <nb-card>
+                                        <nb-card-header class="headerstyle"><img class="iconsheader" src="../../../../assets/images/return.png"><b>Return flight</b>
+                                        </nb-card-header>
+                                        <nb-card-body>
+                                            <div class="row">
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="rflightnumber" class="label">Flight number <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="rflightnumber" placeholder="Enter flight number" formControlName="rflightnumber" value="{{rflightnumber}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="rflightdate" class="label">Flight date <span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="rflightdate" name="rflightdate" placeholder="MM/DD/YYY" type="datetime-local" formControlName="rflightdate" value="{{rflightdate}}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="rdepartureairport" class="label">Departure airport
+                                                            <span style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="rdepartureairport" placeholder="Enter a departure airport" formControlName="rdepartureairport" value="{{rdepartureairport}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="rdeparturedate" class="label">Departure date <span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="rdeparturedate" name="rdeparturedate" placeholder="MM/DD/YYY" type="datetime-local" formControlName="rdeparturedate" value="{{rdeparturedate}}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="rarrivalairport" class="label">Arrival airport <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="rarrivalairport" placeholder="Enter an arrival airport" formControlName="rarrivalairport" value="{{rarrivalairport}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="rarrivaldate" class="label">Arrival date <span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="rarrivaldate" name="rarrivaldate" placeholder="MM/DD/YYY" type="datetime-local" formControlName="rarrivaldate" value="{{rarrivaldate}}" />
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="rairlineclass" class="label">Class <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{rairlineclass}} fullWidth formControlName="rairlineclass">
+                                                            <nb-option value="Economy">Economy</nb-option>
+                                                            <nb-option value="Business">Business</nb-option>
+                                                            <nb-option value="First class">First class</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="rcostperpax" class="label">Cost per pax <span
+                                                                style="color: red;">*</span></label>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">MYR</span>
+                                                            <input type="number" class="form-control" id="rcostperpax" placeholder="Enter a cost per pax" formControlName="rcostperpax" value="{{rcostperpax}}">
+                                                        </div>
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </nb-card-body>
+
+                                    </nb-card>
+                                </div>
+                            </div>
+
+                            <button nbButton nbStepperNext (click)="form1()">Next</button>
+                        </form>
+                    </nb-step>
+
+                    <!-- END FLIGHT SECTION -->
+
+
+
+                    <!-- HOTEL SECTION -->
+                    <nb-step [stepControl]="secondForm" label="Hotel">
+                        <form [formGroup]="secondForm" class="step-container">
+
+                            <div class="row">
+
+                                <!-- Jeddah Room -->
+                                <div class="col-md-6">
+
+                                    <nb-card>
+                                        <nb-card-header class="headerstyle"><b>Hotel 1 </b>
+                                        </nb-card-header>
+                                        <nb-card-body>
+                                            <div class="row">
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="hotelname1" class="label">Select hotel <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="hotelname1" placeholder="Select a hotel" formControlName="hotelname1" value="{{hotelname1}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label for="stayday1" class="label">Days
+                                                            <span style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="stayday1" placeholder="Number of days" formControlName="stayday1" value="{{stayday1}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label for="staynight1" class="label">Nights
+                                                            <span style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="staynight1" placeholder="Number of nights" formControlName="staynight1" value="{{staynight1}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="hotelroomtype1" class="label">Room type <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{hotelroomtype1}} fullWidth formControlName="hotelroomtype1">
+                                                            <nb-option value="1">Single room</nb-option>
+                                                            <nb-option value="2">Double room</nb-option>
+                                                            <nb-option value="3">Triple room</nb-option>
+                                                            <nb-option value="4">Quad room</nb-option>
+                                                            <nb-option value="5">Quint room</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="hotelroomsize1" class="label">Room size <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="jhotelroomsize" placeholder="500 m2" formControlName="hotelroomsize1" value="{{hotelroomsize1}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="distancetolocation1" class="label">Distance to location <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="distancetolocation1" placeholder="50m" formControlName="distancetolocation1" value="{{distancetolocation1}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="hotelroomview1" class="label">Room view <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{hotelroomview1}} fullWidth formControlName="hotelroomview1">
+                                                            <nb-option value="Haram view">Haram view</nb-option>
+                                                            <nb-option value="Kaabah view">Kaabah view</nb-option>
+                                                            <nb-option value="None">None</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="hotelmeals1" class="label">Included meals <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{hotelmeals1}} fullWidth formControlName="hotelmeals1">
+                                                            <nb-option value="Breakfast">Breakfast</nb-option>
+                                                            <nb-option value="Breakfast + lunch">Breakfast + lunch
+                                                            </nb-option>
+                                                            <nb-option value="Breakfast + lunch + dinner">Breakfast + lunch + dinner</nb-option>
+                                                            <nb-option value="None">None</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="totalroomcost1" class="label">Total room cost<span
+                                                                style="color: red;">*</span></label>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">MYR</span>
+                                                            <input type="number" class="form-control" id="totalroomcost1" placeholder="Total room cost" formControlName="totalroomcost1" value="{{totalroomcost1}}">
+                                                        </div>
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+
+                                        </nb-card-body>
+                                    </nb-card>
+                                </div>
+                                <!-- END Jeddah Room -->
+
+                                <!-- Medina Room -->
+                                <div class="col-md-6">
+                                    <nb-card>
+                                        <nb-card-header class="headerstyle"><b>Hotel 2 </b> (if applicable)
+                                        </nb-card-header>
+                                        <nb-card-body>
+                                            <div class="row">
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="hotelname2" class="label">Select hotel <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="hotelname2" placeholder="Select a hotel" formControlName="hotelname2" value="{{hotelname2}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label for="stayday2" class="label">Days
+                                                            <span style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="stayday2" placeholder="Number of days" formControlName="stayday2" value="{{stayday2}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label for="staynight2" class="label">Nights
+                                                            <span style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="staynight2" placeholder="Number of nights" formControlName="staynight2" value="{{staynight2}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="hotelroomtype2" class="label">Room type <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{hotelroomtype2}} fullWidth formControlName="hotelroomtype2">
+                                                            <nb-option value="1">Single room</nb-option>
+                                                            <nb-option value="2">Double room</nb-option>
+                                                            <nb-option value="3">Triple room</nb-option>
+                                                            <nb-option value="4">Quad room</nb-option>
+                                                            <nb-option value="5">Quint room</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="hotelroomsize2" class="label">Room size <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="hotelroomsize2" placeholder="500 m2" formControlName="hotelroomsize2" value="{{hotelroomsize2}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="distancetolocation2" class="label">Distance to location <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="distancetolocation2" placeholder="50m" formControlName="distancetolocation2" value="{{distancetolocation2}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="hotelroomview2" class="label">Room view <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{hotelroomview2}} fullWidth formControlName="hotelroomview2">
+                                                            <nb-option value="Haram view">Haram view</nb-option>
+                                                            <nb-option value="Kaabah view">Kaabah view</nb-option>
+                                                            <nb-option value="None">None</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="hotelmeals2" class="label">Included meals <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{hotelmeals2}} fullWidth formControlName="hotelmeals2">
+                                                            <nb-option value="Breakfast">Breakfast</nb-option>
+                                                            <nb-option value="Breakfast + lunch">Breakfast + lunch
+                                                            </nb-option>
+                                                            <nb-option value="Breakfast + lunch + dinner">Breakfast + lunch + dinner</nb-option>
+                                                            <nb-option value="None">None</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="totalroomcost2" class="label">Total room cost<span
+                                                                style="color: red;">*</span></label>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">MYR</span>
+                                                            <input type="number" class="form-control" id="totalroomcost2" placeholder="Total room cost" formControlName="totalroomcost2" value="{{totalroomcost2}}">
+                                                        </div>
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </nb-card-body>
+                                    </nb-card>
+                                </div>
+                                <!--End Medina Room -->
+
+                            </div>
+                            <button nbButton nbStepperPrevious>prev</button>
+                            <button nbButton nbStepperNext (click)="form2()">next</button>
+                        </form>
+                    </nb-step>
+
+                    <!-- END HOTEL SECTION -->
+
+
+                    <!-- START TRANSPORT SECTION -->
+                    <nb-step [stepControl]="thirdForm" label="Transport">
+                        <form [formGroup]="thirdForm" class="step-container">
+
+                            <div class="row">
+
+                                <!-- Transport 1 -->
+                                <div class="col-md-4">
+                                    <nb-card>
+                                        <nb-card-header class="headerstyle"><b>Transport 1</b>
+                                        </nb-card-header>
+                                        <nb-card-body>
+                                            <div class="row">
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="transporttype1" class="label">Transport type <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{transporttype1}} fullWidth formControlName="transporttype1">
+                                                            <nb-option value="Bus">Bus</nb-option>
+                                                            <nb-option value="Train">Train</nb-option>
+                                                            <nb-option value="Private car">Private car</nb-option>
+                                                            <nb-option value="Taxi">Taxi</nb-option>
+                                                            <nb-option value="None">None</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="transportcost1" class="label">Transport cost<span
+                                                                style="color: red;">*</span></label>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">MYR</span>
+                                                            <input type="number" class="form-control" id="transportcost1" placeholder="500" formControlName="transportcost1" value="{{transportcost1}}">
+                                                        </div>
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="transportypeincluded1" class="label">Included in
+                                                            package? <span style="color: red;">*</span></label>
+                                                        <nb-select selected={{transportypeincluded1}} fullWidth formControlName="transportypeincluded1">
+                                                            <nb-option value="Yes">Yes</nb-option>
+                                                            <nb-option value="No">No</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <!-- Date input -->
+                                                        <label for="departuretransport1" class="label">Departure<span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="departuretransport1" name="departuretransport1" placeholder="MM/DD/YYY" type="time" formControlName="departuretransport1" value="{{departuretransport1}}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <!-- Date input -->
+                                                        <label for="arrivaltransport1" class="label">Arrival<span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="arrivaltransport1" name="arrivaltransport1" placeholder="MM/DD/YYY" type="time" formControlName="arrivaltransport1" value="{{arrivaltransport1}}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="departfromtransport1" class="label">Depart from<span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="departfromtransport1" formControlName="departfromtransport1" value="{{darrivalairport}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </nb-card-body>
+                                    </nb-card>
+                                </div>
+                                <!-- END Transport 1 -->
+
+                                <!-- Transport 2 -->
+                                <div class="col-md-4">
+
+                                    <nb-card>
+                                        <nb-card-header class="headerstyle"><b>Transport 2</b>
+                                        </nb-card-header>
+                                        <nb-card-body>
+                                            <div class="row">
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="transporttype2" class="label">Transport type <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{transporttype2}} fullWidth formControlName="transporttype2">
+                                                            <nb-option value="Bus">Bus</nb-option>
+                                                            <nb-option value="Train">Train</nb-option>
+                                                            <nb-option value="Private car">Private car</nb-option>
+                                                            <nb-option value="Taxi">Taxi</nb-option>
+                                                            <nb-option value="None">None</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="transportcost2" class="label">Transport cost<span
+                                                                style="color: red;">*</span></label>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">MYR</span>
+                                                            <input type="number" class="form-control" id="transportcost2" placeholder="500" formControlName="transportcost2" value="{{transportcost2}}">
+                                                        </div>
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="transportypeincluded2" class="label">Included in
+                                                            package? <span style="color: red;">*</span></label>
+                                                        <nb-select selected={{transportypeincluded2}} fullWidth formControlName="transportypeincluded2">
+                                                            <nb-option value="Yes">Yes</nb-option>
+                                                            <nb-option value="No">No</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <!-- Date input -->
+                                                        <label for="departuretransport2" class="label">Departure<span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="departuretransport2" name="departuretransport2" placeholder="MM/DD/YYY" type="time" formControlName="departuretransport2" value="{{departuretransport2}}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <!-- Date input -->
+                                                        <label for="arrivaltransport2" class="label">Arrival<span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="arrivaltransport2" name="arrivaltransport2" placeholder="MM/DD/YYY" type="time" formControlName="arrivaltransport2" value="{{arrivaltransport2}}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="departfromtransport2" class="label">Depart from<span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="departfromtransport2" placeholder="Hotel name" formControlName="departfromtransport2" value="{{departfromtransport2}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </nb-card-body>
+                                    </nb-card>
+                                </div>
+                                <!-- END Transport 2 -->
+
+                                <!-- Transport 3 -->
+                                <div class="col-md-4">
+
+                                    <nb-card>
+                                        <nb-card-header class="headerstyle"><b>Transport 3</b>
+                                        </nb-card-header>
+                                        <nb-card-body>
+                                            <div class="row">
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="transporttype3" class="label">Transport type <span
+                                                                style="color: red;">*</span></label>
+                                                        <nb-select selected={{transporttype3}} fullWidth formControlName="transporttype3">
+                                                            <nb-option value="Bus">Bus</nb-option>
+                                                            <nb-option value="Train">Train</nb-option>
+                                                            <nb-option value="Private car">Private car</nb-option>
+                                                            <nb-option value="Taxi">Taxi</nb-option>
+                                                            <nb-option value="None">None</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="transportcost3" class="label">Transport cost<span
+                                                                style="color: red;">*</span></label>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">MYR</span>
+                                                            <input type="number" class="form-control" id="transportcost3" placeholder="500" formControlName="transportcost3" value="{{transportcost3}}">
+                                                        </div>
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="transportypeincluded3" class="label">Included in
+                                                            package? <span style="color: red;">*</span></label>
+                                                        <nb-select selected={{transportypeincluded3}} fullWidth formControlName="transportypeincluded3">
+                                                            <nb-option value="Yes">Yes</nb-option>
+                                                            <nb-option value="No">No</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <!-- Date input -->
+                                                        <label for="departuretransport3" class="label">Departure<span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="departuretransport3" name="departuretransport3" placeholder="MM/DD/YYY" type="time" formControlName="departuretransport3" value="{{departuretransport3}}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <!-- Date input -->
+                                                        <label for="arrivaltransport3" class="label">Arrival<span
+                                                                style="color: red;">*</span></label>
+                                                        <input class="form-control" id="arrivaltransport3" placeholder="MM/DD/YYY" type="time" formControlName="arrivaltransport3" value="{{arrivaltransport3}}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="departfromtransport3" class="label">Depart from<span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="departfromtransport3" placeholder="Hotel name" formControlName="departfromtransport3" value="{{departfromtransport3}}">
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </nb-card-body>
+                                    </nb-card>
+                                </div>
+                                <!-- END Transport 3 -->
+
+                            </div>
+
+                            <button nbButton nbStepperPrevious>prev</button>
+                            <button nbButton nbStepperNext (click)="form3()">Next</button>
+                        </form>
+                    </nb-step>
+                    <!-- END TRANSPORT SECTION -->
+
+
+
+                    <!-- STEP PACKAGE DETAILS SECTION -->
+                    <nb-step [stepControl]="fourthForm" label="Package">
+                        <form [formGroup]="fourthForm" class="step-container">
+
+                            <div class="row">
+
+                                <!-- Package details -->
+                                <div class="col-md-12">
+
+                                    <nb-card>
+                                        <nb-card-header class="headerstyle"><b>Package details</b></nb-card-header>
+                                        <nb-card-body>
+
+                                            <div class="row">
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="packagename" class="label">Package name <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="packagename" placeholder="Enter package name" formControlName="packagename" value="{{packagename}}">
+                                                        <small id="emailHelp" class="form-text text-muted">Package name
+                                                            will be displayed to users</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="sector" class="label">Sector <span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="text" class="form-control" id="sector" placeholder="Enter sector" formControlName="sector" value="{{sector}}">
+                                                        <small id="emailHelp" class="form-text text-muted">Example:
+                                                            KUL-JED | JED-KUL</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="slotsavailable" class="label">Slots available<span
+                                                                style="color: red;">*</span></label>
+                                                        <input type="number" class="form-control" id="slotsavailable" placeholder="10" formControlName="slotsavailable" value="{{slotsavailable}}">
+                                                        <small id="emailHelp" class="form-text text-muted">Total number
+                                                            of slots for this package</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="evisaincluded" class="label">Is the e-visa included?
+                                                            <span style="color: red;">*</span></label>
+                                                        <nb-select selected={{evisaincluded}} fullWidth formControlName="evisaincluded">
+                                                            <nb-option value="Yes">Yes</nb-option>
+                                                            <nb-option value="No">No</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="evisacost" class="label">E-visa cost<span
+                                                                style="color: red;">*</span></label>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">MYR</span>
+                                                            <input type="number" class="form-control" id="evisacost" placeholder="500" formControlName="evisacost" value="{{evisacost}}">
+                                                        </div>
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="mutawwifincluded" class="label">Is an Umrah
+                                                            Mutawwif included?
+                                                            <span style="color: red;">*</span></label>
+                                                        <nb-select selected={{mutawwifincluded}} fullWidth formControlName="mutawwifincluded">
+                                                            <nb-option value="Yes">Yes</nb-option>
+                                                            <nb-option value="No">No</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="mutawwifcost" class="label">Umrah Mutawwif cost<span
+                                                                style="color: red;">*</span></label>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">MYR</span>
+                                                            <input type="number" class="form-control" id="mutawwifcost" placeholder="500" formControlName="mutawwifcost" value="{{mutawwifcost}}">
+                                                        </div>
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="travelinsuranceincluded" class="label">Is an Umrah
+                                                            travel insurance included?
+                                                            <span style="color: red;">*</span></label>
+                                                        <nb-select selected={{travelinsuranceincluded}} fullWidth formControlName="travelinsuranceincluded">
+                                                            <nb-option value="Yes">Yes</nb-option>
+                                                            <nb-option value="No">No</nb-option>
+                                                        </nb-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="travelinsurancecost" class="label">Umrah travel
+                                                            insurance cost<span style="color: red;">*</span></label>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">MYR</span>
+                                                            <input type="number" class="form-control" id="travelinsurancecost" placeholder="500" formControlName="travelinsurancecost" value="{{travelinsurancecost}}">
+                                                        </div>
+                                                        <!-- <small id="emailHelp" class="form-text text-muted">Package name will be displayed to users</small> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="packageStatus" class="label">Do you want to publish this package?
+                                                            <span style="color: red;">*</span></label>
+                                                        <nb-select selected='1' fullWidth formControlName="packageStatus">
+                                                            <nb-option value="1">Yes</nb-option>
+                                                            <nb-option value="0">No</nb-option>
+                                                        </nb-select>
+                                                        <small id="emailHelp" class="form-text text-muted">Packages published will be visible to users</small>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </nb-card-body>
+                                    </nb-card>
+                                </div>
+
+                            </div>
+
+                            <button nbButton nbStepperPrevious style="padding-right: 10px !important;">prev</button>
+                            <button style="background-color: #BBA664; color: #fff;" nbButton nbStepperNext (click)="submitPackage()">Submit package details</button>
+                        </form>
+                    </nb-step>
+                    <!-- END PACKAGE DETAILS SECTION -->
+
+                </nb-stepper>
+            </nb-card-body>
+
+        </nb-card>
+    </div>
+</div>

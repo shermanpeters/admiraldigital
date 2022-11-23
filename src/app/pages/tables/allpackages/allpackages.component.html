@@ -1,0 +1,34 @@
+<table class="table table-striped" id="myTable">
+    <thead>
+        <tr>
+            <th scope="col">Package</th>
+            <th scope="col">Sector</th>
+            <th scope="col">Departure</th>
+            <th scope="col">Price</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of packageData">
+            <td>{{item.packagename}} <span class="badge badge-success">{{item.slotsavailable}} slots</span></td>
+            <td>{{item.packagesector}}</td>
+            <td>{{item.dep_flightdate}}</td>
+            <td>{{item.totalCost | currency:'MYR '}}</td>
+            <td>{{item.packagestatus}}</td>
+            <td>
+                <button style="margin-right: 5px;" type="button" class="btn btn-outline-dark btn-sm" value="{{item.packageid}}" (click)=edit(item.packageid)>
+                    <nb-icon icon="edit-outline"></nb-icon>
+                </button>
+
+                <button style="margin-right: 5px;" type="button" class="btn btn-outline-dark btn-sm" value="{{item.packageid}}" (click)=delete(item.packageid)>
+                    <nb-icon icon="trash-outline"></nb-icon>
+                </button>
+
+                <button type="button" class="btn btn-outline-dark btn-sm" value="{{item.packageid}}" (click)=duplicate(item.packageid)>
+                    <nb-icon icon="copy-outline"></nb-icon>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row my-3">
+
+    <div class="col-md-6">
+      <div class="card text-center h-80">
+        <div class="card-block">
+          <h6 class="card-title">Employee's check-ins today</h6>
+          <h4><i class="fa fa-user-check fa-1x"></i></h4>
+        </div>
+        <div class="row px-2 no-gutters">
+          <div class="col-12" *ngFor="let item of totalCheckins">
+            <h5 class="card card-block border-top-0 border-left-0 border-bottom-0">{{item.todayCheckin}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card text-center h-80">
+        <div class="card-block">
+          <h6 class="card-title">Highest temperature</h6>
+          <h4><i class="fa fa-thermometer fa-1x"></i></h4>
+        </div>
+        <div class="row px-2 no-gutters">
+          <div class="col-12" *ngFor="let item of highestTemperature">
+            <h5 class="card card-block border-top-0 border-left-0 border-bottom-0">{{item.hightemperature}} °C</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<nb-card>
+  <nb-card-header>
+    Employee's Check-ins
+    <button class="buttonExport" nbButton style="float: right;" outline status="info"
+      (click)="downloadCSV()">EXPORT</button>
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

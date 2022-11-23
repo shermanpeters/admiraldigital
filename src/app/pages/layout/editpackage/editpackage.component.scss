@@ -1,0 +1,66 @@
+// :host ::ng-deep nb-stepper .step-content {
+//     text-align: center;
+//     button {
+//         cursor: pointer;
+//         margin: 0.5rem;
+//     }
+// }
+.label {
+    // font-weight: bold;
+    color: black;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.form-control {
+    font-size: 14px;
+}
+
+.form-text {
+    font-style: italic;
+    font-size: 12px;
+}
+
+.stepperstyle {
+    color: #d50303 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.iconsheader {
+    margin: auto;
+    width: 5%;
+    float: right;
+}
+
+.headerstyle {
+    background-color: #bba664;
+    color: white
+}
+
+.icontext {
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.reviewlabel {
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 15px !important;
+}
+
+.reviewvalue {
+    font-weight: normal;
+}
+
+.reviewheaders {
+    font-size: 16px;
+    font-weight: bolder !important;
+    color: #bba664;
+}
+
+.currency {
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+}

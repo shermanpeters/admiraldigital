@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card>
+            <nb-card-header>Transfer money <span class="bankBalance"><b>Balance:</b> {{totalBankBalance |
+                    currency:'MYR '}}</span>
+            </nb-card-header>
+            <nb-card-body>
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="transferamount" class="label">Transfer amount <span
+                                    style="color: red;">*</span></label>
+                            <input type="number" class="form-control" [(ngModel)]="userData.transferamount">
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="transferbank" class="label">Transfer to bank? <span
+                                    style="color: red;">*</span></label>
+                            <nb-select selected="1" fullWidth [(ngModel)]="userData.transferbank">
+                                <nb-option value="CIMB Bank">CIMB Bank</nb-option>
+                                <nb-option value="May Bank">May Bank</nb-option>
+                                <nb-option value="Hong Leong Bank">Hong Leong Bank</nb-option>
+                            </nb-select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="accountnumber" class="label">Account number <span
+                                    style="color: red;">*</span></label>
+                            <input type="number" class="form-control" id="accountnumber" [(ngModel)]="userData.accountnumber">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <button [class.spinner]="loading" [disabled]="loading" style="float: right;" type="submit" nbButton size="large" (click)="transfer()">Submit</button>
+
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

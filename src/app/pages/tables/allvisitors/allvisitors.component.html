@@ -1,0 +1,15 @@
+<nb-card>
+  <nb-card-header>
+    Registered visitors
+    <button class="buttonExport" nbButton style="float: right;" outline status="info"
+      (click)="downloadCSV()"  >EXPORT</button>
+
+
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"
+      (editConfirm)="onEditConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

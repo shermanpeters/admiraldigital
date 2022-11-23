@@ -1,0 +1,21 @@
+<nb-card>
+  <nb-card-header>
+    Face verfication - Employees (Manual procedure)
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (custom)="imageManual($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card> 
+
+<nb-card>
+  <nb-card-header>
+    Face verfication - Visitors (Manual procedure)
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings1" [source]="source1" (custom)="imageManual($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card> 
